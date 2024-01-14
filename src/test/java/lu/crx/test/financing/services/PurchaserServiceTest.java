@@ -1,18 +1,30 @@
+/*
 package lu.crx.test.financing.services;
 
 import lombok.extern.slf4j.Slf4j;
+import lu.crx.test.financing.entities.Creditor;
+import lu.crx.test.financing.entities.Purchaser;
+import lu.crx.test.financing.entities.PurchaserFinancingSettings;
+import lu.crx.test.financing.repository.PurchaserRepository;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
+*/
 /**
  * @author Andreas Karmenis
  * @created 09/01/2024 - 12:57 PM
  * @project test-assignment-financing-v1.4
- */
+ *//*
+
 @Slf4j
 @ExtendWith(MockitoExtension.class)
 public class PurchaserServiceTest {
-/*    @Mock
+    @Mock
     private PurchaserRepository purchaserRepository;
 
     @Test
@@ -73,5 +85,5 @@ public class PurchaserServiceTest {
                 .when(purchaserRepository.findById(7L))
                 .thenReturn(Optional.of(richBank));
 
-    }*/
-}
+    }
+}*/

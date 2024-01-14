@@ -1,5 +1,5 @@
 server:
-  port: 8009
+  port: 8080
 
 spring:
 
@@ -20,5 +20,5 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     generate-ddl: true

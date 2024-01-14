@@ -45,6 +45,4 @@ public class InvoiceService {
         return invoiceRepository.saveAndFlush(invoice);
     }
 
-
-
 }

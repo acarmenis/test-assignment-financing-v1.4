@@ -7,14 +7,11 @@ import lu.crx.test.financing.entities.Creditor;
 import lu.crx.test.financing.entities.EarlyPayment;
 import lu.crx.test.financing.entities.Invoice;
 import lu.crx.test.financing.entities.Purchaser;
-import lu.crx.test.financing.utils.DateUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -35,9 +32,7 @@ public class FinancingService {
     private final EarlyPaymentService earlyPaymentService;
     @Transactional
     public void finance() {
-        /** started time ->  is to mark the starting date of the algorithm */
-        LocalDateTime started = LocalDateTime.now();
-        log.info("Financing started at: {}", started );
+
         /** eligibleForFinancingIds ->  chooses the eligible purchasers/invoices */
         List<QuerySelectionDto> eligibleForFinancingIds = invoiceService.doEligibleForFinancingQuerySelection();
         if (CollectionUtils.isNotEmpty(eligibleForFinancingIds)){
@@ -98,12 +93,6 @@ public class FinancingService {
                     }
             });
         }
-        // mark here the end of algorithm time
-        LocalDateTime ended = LocalDateTime.now();
-        // find the duration between the start / end date
-        Duration duration = DateUtils.getDuration(started, ended);
-        // logging her in the human readable form
-        log.info("Financing completed at: {}, duration: {}",ended, DateUtils.convertToHumanDate(duration.toMillis()) );
     }
 
 }
